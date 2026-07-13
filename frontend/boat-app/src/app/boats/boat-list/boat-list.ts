@@ -1,8 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 
-import { BoatControllerService } from '../../generated';
-import { PageBoatResponse } from '../../generated';
 
 @Component({
   selector: 'app-boat-list',
