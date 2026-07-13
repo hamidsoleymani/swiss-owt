@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: swiss-owt-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/swiss_owt
+    username: postgres
+    password: postgres
+
+  flyway:
+    enabled: true
+    default-schema: swiss_owt_schema
+    schemas:
+      - swiss_owt_schema
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    properties:
+      hibernate:
+        default_schema: swiss_owt_schema
+
+server:
+  port: 9090
