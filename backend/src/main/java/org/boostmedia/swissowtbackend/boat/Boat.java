@@ -25,9 +25,10 @@ public class Boat {
     protected Boat() {
     }
 
-    public Boat(String name, String description) {
+    public Boat(String name, String description, LocalDateTime createdAt) {
         this.name = name;
         this.description = description;
+        this.createdAt = createdAt;
     }
 
     public Long getId() {
