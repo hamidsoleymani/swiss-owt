@@ -35,3 +35,7 @@ build/
 
 ### Node.js ###
 node_modules/
+frontend/boat-app/src/app/generated/.openapi-generator/
+frontend/boat-app/src/app/generated/.openapi-generator-ignore
+frontend/boat-app/src/app/generated/.gitignore
+frontend/boat-app/src/app/generated/git_push.sh
