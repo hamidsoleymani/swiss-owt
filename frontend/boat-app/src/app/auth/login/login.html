@@ -1,1 +1,26 @@
-<p>login works!</p>
+<h2>Login</h2>
+
+<div>
+  <label>Username</label><br>
+
+  <input
+    [(ngModel)]="username"
+    placeholder="Username">
+</div>
+
+<br>
+
+<div>
+  <label>Password</label><br>
+
+  <input
+    type="password"
+    [(ngModel)]="password"
+    placeholder="Password">
+</div>
+
+<br>
+
+<button (click)="login()">
+  Login
+</button>
