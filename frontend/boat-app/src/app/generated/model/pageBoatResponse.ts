@@ -16,9 +16,9 @@ export interface PageBoatResponse {
     totalElements?: number;
     totalPages?: number;
     pageable?: PageableObject;
+    numberOfElements?: number;
     first?: boolean;
     last?: boolean;
-    numberOfElements?: number;
     sort?: SortObject;
     size?: number;
     content?: Array<BoatResponse>;
