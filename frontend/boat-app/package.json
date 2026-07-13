@@ -6,7 +6,8 @@
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate-api": "openapi-generator-cli generate -i http://localhost:9090/v3/api-docs -g typescript-angular -o src/app/api --additional-properties=ngVersion=21,providedIn=root"
   },
   "prettier": {
     "printWidth": 100,
