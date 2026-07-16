@@ -10,7 +10,7 @@
 
 ### Frontend
 
-ChatGPT was used to assist with:
+ChatGPT was used to write:
 
 - Angular routing
 - CSS
@@ -70,10 +70,5 @@ the generated code before using it which did not often happen.
 
 Most of the backend implementation was developed without relying on AI.
 
-ChatGPT was primarily used to:
-
-- Validate architectural decisions
-- Review code quality
-- Suggest improvements
 
 The core backend implementation and business logic were intentionally implemented manually to ensure a solid understanding of the technologies and design decisions.
