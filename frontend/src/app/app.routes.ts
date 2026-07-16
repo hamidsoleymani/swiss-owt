@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { Login } from './auth/login';
 import { BoatList } from './boats/boat-list/boat-list';
 import {BoatForm} from './boats/boat-form/boat-form';
+import {authGuard} from './auth/auth.guard';
 
 export const routes: Routes = [
 
@@ -19,16 +20,19 @@ export const routes: Routes = [
 
   {
     path: 'boats',
-    component: BoatList
+    component: BoatList,
+    canActivate: [authGuard]
   },
 
   {
     path: 'boats/new',
-    component: BoatForm
+    component: BoatForm,
+    canActivate: [authGuard]
   },
   {
     path: 'boats/:id/edit',
-    component: BoatForm
+    component: BoatForm,
+    canActivate: [authGuard]
   },
   {
     path: '**',

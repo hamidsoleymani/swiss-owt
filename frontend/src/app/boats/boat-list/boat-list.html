@@ -4,6 +4,9 @@
   Create Boat
 </button>
 
+<button (click)="logout()">
+  Logout
+</button>
 <br><br>
 
 <table border="1">
@@ -58,3 +61,27 @@
   </tbody>
 
 </table>
+
+<br>
+
+<button
+  (click)="previousPage()"
+  [disabled]="page === 0">
+  Previous
+</button>
+
+&nbsp;
+
+Page {{ page + 1 }} of {{ totalPages }}
+
+&nbsp;
+
+<button
+  (click)="nextPage()"
+  [disabled]="page >= totalPages - 1">
+  Next
+</button>
+
+<br><br>
+
+Total boats: {{ totalElements }}

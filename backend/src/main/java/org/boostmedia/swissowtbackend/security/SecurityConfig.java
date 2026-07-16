@@ -1,6 +1,7 @@
 package org.boostmedia.swissowtbackend.security;
 
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -17,7 +18,6 @@ public class SecurityConfig {
     public SecurityConfig(DatabaseUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
-
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -30,8 +30,13 @@ public class SecurityConfig {
                                 "/swagger-ui.html"
                         ).permitAll()
                         .anyRequest().authenticated())
-                .httpBasic(Customizer.withDefaults())
-                .userDetailsService(userDetailsService);
+                .userDetailsService(userDetailsService)
+                .httpBasic(httpBasic ->
+                        httpBasic.authenticationEntryPoint(
+                                (request, response, authException) ->
+                                        response.sendError(HttpServletResponse.SC_UNAUTHORIZED)
+                        )
+                );
 
         return http.build();
     }

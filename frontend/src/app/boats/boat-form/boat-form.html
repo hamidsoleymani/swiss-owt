@@ -1,16 +1,19 @@
 <h2>
   {{ boat.id ? 'Edit Boat' : 'Create Boat' }}
 </h2>
+
 <div>
 
-  <label>Name</label>
+  <label for="name">Name</label>
 
   <br>
 
   <input
+    id="name"
     name="name"
     type="text"
-    [(ngModel)]="boat.name">
+    [(ngModel)]="boat.name"
+    required>
 
 </div>
 
@@ -18,11 +21,12 @@
 
 <div>
 
-  <label>Description</label>
+  <label for="description">Description</label>
 
   <br>
 
   <textarea
+    id="description"
     name="description"
     rows="5"
     [(ngModel)]="boat.description">
