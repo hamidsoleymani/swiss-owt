@@ -1,0 +1,27 @@
+server:
+  port: 9090
+
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.p12
+    key-store-password: 123456
+    key-store-type: PKCS12
+    key-alias: swiss-owt
+
+spring:
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/swiss_owt
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    org.flywaydb: INFO

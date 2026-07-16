@@ -1,9 +1,25 @@
-FROM eclipse-temurin:21-jre
+# ---------- Build ----------
+
+FROM maven:3.9.11-eclipse-temurin-21 AS build
 
 WORKDIR /app
 
-COPY target/*.jar app.jar
+COPY pom.xml .
 
-EXPOSE 8080
+RUN mvn dependency:go-offline
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+COPY src src
+
+RUN mvn clean package -DskipTests
+
+# ---------- Runtime ----------
+
+FROM eclipse-temurin:21-jre-alpine
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+EXPOSE 9090
+
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=docker"]
