@@ -1,0 +1,54 @@
+<h2>Boats</h2>
+
+<button>Create Boat</button>
+
+<br><br>
+
+<table border="1">
+
+  <thead>
+
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Created</th>
+    <th>Actions</th>
+  </tr>
+
+  </thead>
+
+  <tbody>
+
+    @for (boat of boats; track boat.id) {
+
+      <tr>
+
+        <td>{{ boat.id }}</td>
+        <td>{{ boat.name }}</td>
+        <td>{{ boat.description }}</td>
+        <td>{{ boat.createdAt }}</td>
+
+        <td>
+
+          <button>Edit</button>
+
+          <button>Delete</button>
+
+        </td>
+
+      </tr>
+
+    } @empty {
+
+      <tr>
+        <td colspan="5">
+          No boats found.
+        </td>
+      </tr>
+
+    }
+
+  </tbody>
+
+</table>

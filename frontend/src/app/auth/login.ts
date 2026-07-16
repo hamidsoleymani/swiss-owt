@@ -26,7 +26,7 @@ export class Login {
       this.password
     );
 
-    console.log('Login successful');
+    this.router.navigate(['/boats']);
   }
 
 }
