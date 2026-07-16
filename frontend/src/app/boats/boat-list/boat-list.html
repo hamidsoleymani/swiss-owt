@@ -1,6 +1,8 @@
 <h2>Boats</h2>
 
-<button>Create Boat</button>
+<button (click)="createBoat()">
+  Create Boat
+</button>
 
 <br><br>
 
@@ -31,9 +33,13 @@
 
         <td>
 
-          <button>Edit</button>
+          <button (click)="editBoat(boat.id!)">
+            Edit
+          </button>
 
-          <button>Delete</button>
+          <button (click)="deleteBoat(boat.id!)">
+            Delete
+          </button>
 
         </td>
 

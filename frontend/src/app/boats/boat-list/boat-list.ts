@@ -35,11 +35,31 @@ export class BoatList implements OnInit {
   }
 
   createBoat(): void {
-    // implemented later
+    this.router.navigate(['/boats/new']);
   }
 
   editBoat(id: number): void {
-    // implemented later
+    this.router.navigate([
+      '/boats',
+      id,
+      'edit'
+    ]);
+
+  }
+
+  deleteBoat(id: number): void {
+
+    if (!confirm('Delete this boat?')) {
+      return;
+    }
+
+    this.boatService.delete(id)
+      .subscribe(() => {
+
+        this.loadBoats();
+
+      });
+
   }
 
 }

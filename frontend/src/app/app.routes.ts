@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { Login } from './auth/login';
 import { BoatList } from './boats/boat-list/boat-list';
+import {BoatForm} from './boats/boat-form/boat-form';
 
 export const routes: Routes = [
 
@@ -21,8 +22,14 @@ export const routes: Routes = [
     component: BoatList
   },
 
-
-
+  {
+    path: 'boats/new',
+    component: BoatForm
+  },
+  {
+    path: 'boats/:id/edit',
+    component: BoatForm
+  },
   {
     path: '**',
     redirectTo: 'login'
